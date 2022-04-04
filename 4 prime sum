@@ -1,0 +1,25 @@
+num = int(input("Enter the number :- "))
+list1 = []
+def prime(num):
+    if(num==2):
+        return True
+    for i in range(2,num):
+        if num % i == 0:
+            return False
+        return True
+for j in range(2,num):
+    if(prime(j)):
+        list1.append(j)
+for i in list1:
+    for j in list1:
+        for k in list1:
+            for l in list1:
+                if(i+j+k+l == 18):
+                    print("output :- ",i,j,k,l)
+                    quit()
+                    
+     **********************output***************************
+        
+Enter the number :- 
+18
+output :-  2 2 3 11
