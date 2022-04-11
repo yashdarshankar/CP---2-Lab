@@ -1,0 +1,40 @@
+list1 = []
+n = int(input("Enter the number :-"))
+num = n
+num1 = n
+
+
+def prime(num):
+    while num % 2 == 0:
+        list1.append(2)
+        num = num / 2
+
+    for i in range(3, num + 1, 2):
+        while num % i == 0:
+            list1.append(i)
+            num = num / i
+    if num > 2:
+        list1.append(num)
+
+def sum_num(n):
+    sum1 = 0
+    while (n > 0):
+        temp = n % 10
+        n = n // 10
+        sum1 += temp
+    return (sum1)
+sum3 = sum_num(n)
+prime(num)
+print(list1)
+sum2 = 0
+for i in list1:
+    if i < 10:
+        sum2 += i
+    else:
+        temp = sum_num(i)
+        sum2 += temp
+print(sum2)
+if(sum3 == sum2):
+    print(num1," is a smith num")
+else:
+    print(num1, " is not a smith num")
