@@ -38,3 +38,13 @@ if(sum3 == sum2):
     print(num1," is a smith num")
 else:
     print(num1, " is not a smith num")
+    
+    
+***************************output***********************************
+Enter the number :-
+22
+22  is a smith num
+
+
+** Process exited - Return Code: 0 **
+Press Enter to exit terminal
