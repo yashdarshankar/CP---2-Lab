@@ -1,0 +1,26 @@
+no_of_peg = int(input("Enter the number of Pegs: "))
+no_of_balls = int(input("Enter the number of balls: "))
+list_squares = []
+output = []
+for i in range(0, no_of_peg):
+    temp = []
+    output.append(temp)
+for i in range(no_of_balls + 1):
+    list_squares.append(i * i)
+for j in range(1, no_of_balls + 1):
+    for i in output:
+        if len(i) == 0:
+            i.append(j)
+            break
+        elif i[len(i)-1] + j in list_squares:
+            i.append(j)
+            break
+print(output)
+
+**************************output*****************************************************
+C:\Users\HP\PycharmProjects\CompetetiveProgramming\venv\Scripts\python.exe "C:/Users/HP/PycharmProjects/CompetetiveProgramming/Infosys springboard/exercise 2 collections in python.py"
+Enter the number of Pegs: 4
+Enter the number of balls: 11
+[[1, 3, 6, 10], [2, 7, 9], [4, 5, 11], [8]]
+
+Process finished with exit code 0
