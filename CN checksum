@@ -1,0 +1,47 @@
+n = "012FFA3BC09E45FA"
+arr = []
+temp = ""
+count = 0
+for i in n:
+    temp = temp + i
+    count = count + 1
+    if(count%4==0):
+        arr.append(temp)
+        temp = ''
+print(arr)
+print("Question", arr)
+output = bin(0)
+for i in arr:
+    res = "{0:04b}".format(int(i, 16))
+    output = bin(int(output, 2) + int(res, 2))  # Passing the base value of 2 for binary to the int() function
+    output = output[2:]
+num = int(output, 2)
+# convert int to hexadecimal
+hex_num = format(num, 'x')
+str1 = str(hex_num)
+print("Answer = ", str1[-4:])
+carry = str1[:len(str1) - 4]
+print("carry = ", carry)
+res1 = "{0:16b}".format(int(carry, 16))
+res2 = "{0:16b}".format(int(str1[-4:], 16))
+res3 = bin(int(res1, 2) + int(res2, 2))
+res3 = res3[2:]
+res4 = "{0:16b}".format(int(res3, 2))
+str2 = ''
+for i in res4:
+    if i == '1':
+        str2 += '0'
+    else:
+        str2 += '1'
+num = int(str2, 2)
+hex_num = format(num, 'x')
+print("checksum required = ",str(hex_num))
+########################################################output##########################################################
+C:\Users\HP\PycharmProjects\CompetetiveProgramming\venv\Scripts\python.exe C:/Users/HP/PycharmProjects/CompetetiveProgramming/checksum.py
+['012F', 'FA3B', 'C09E', '45FA']
+Question ['012F', 'FA3B', 'C09E', '45FA']
+Answer =  0202
+carry =  2
+checksum required =  fdfb
+
+Process finished with exit code 0
