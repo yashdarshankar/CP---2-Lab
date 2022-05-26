@@ -1,0 +1,45 @@
+# Name :- Yash Ajay Darshankar  ,  Roll no:- 02
+#Tug of war Problem.
+
+import math
+from itertools import combinations
+inp=[23, 45, -34, 12, 0, 98, -99, 4, 189, -1, 4]
+sum3=[math.ceil(sum(inp) / 2), math.floor(sum(inp) / 2)]
+sum3=list(set(sum3))
+comb1 = combinations(inp, int(len(inp) / 2))
+for i in comb1:
+    i = list(i)
+    a = []
+    b = []
+    for j in inp:
+        if j in i:
+            a.append(j)
+            i.remove(j)
+        else:
+            b.append(j)
+    sum1 = sum(a)
+    sum2 = sum(b)
+    if sum1 in sum3 and sum2 in sum3:
+        if sum1 + sum2 == sum(inp):
+            print("first group :- ", a)
+            print("second group :- ", b)
+            print("sum of each side=", sum1, " ", sum2)
+            print("------------------------------------------------")
+
+
+########################################################OUTPUT###########################################################################
+C:\Users\HP\PycharmProjects\CompetetiveProgramming\venv\Scripts\python.exe C:/Users/HP/PycharmProjects/CompetetiveProgramming/tug_of_war.py
+first group :-  [23, -99, 4, 189, 4]
+second group :-  [45, -34, 12, 0, 98, -1]
+sum of each side= 121   120
+------------------------------------------------
+first group :-  [45, -34, 12, 0, 98]
+second group :-  [23, -99, 4, 189, -1, 4]
+sum of each side= 121   120
+------------------------------------------------
+first group :-  [45, -34, 12, 98, -1]
+second group :-  [23, 0, -99, 4, 189, 4]
+sum of each side= 120   121
+------------------------------------------------
+
+Process finished with exit code 0
